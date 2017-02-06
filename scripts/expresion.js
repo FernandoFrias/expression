@@ -15,7 +15,7 @@ function checkMultiple(initial, nm)
 {
 	lt = ""+nm
 	rtn = 0;
-	if (initial != 0 && nm != 0)
+	if (initial != 0 || nm != 0)
 		for (rec = lt.length; rec > 0; rec--)
 		{
 			opr = nm.substr(0, rec);
@@ -77,7 +77,6 @@ function testOccurs(ini, arr)
 	for(c = 0; c < counter; c++)
 		alert("adata" + "[" + c + "] = " + adata[c]);
 
-	alert("Final");
 	return adata;
 }
 
@@ -94,7 +93,10 @@ function takeArgs()
 			alert("empty");
 		else
 			if (validNumber(arg1) == true)
+			{
 				testOccurs(arg1, arg2);
+				alert("Final");
+			}
 			else
 				alert("wrong argument");
 	}
