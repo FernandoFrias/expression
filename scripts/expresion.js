@@ -15,16 +15,17 @@ function checkMultiple(initial, nm)
 {
 	lt = ""+nm
 	rtn = 0;
-	for (rec = lt.length; rec > 0; rec--)
-	{
-		opr = nm.substr(0, rec);
-		oprd = opr / initial;
-		if(isdec(oprd) == false)
+	if (initial != 0 && nm != 0)
+		for (rec = lt.length; rec > 0; rec--)
 		{
-			rtn = opr;
-			break;
+			opr = nm.substr(0, rec);
+			oprd = opr / initial;
+			if(isdec(oprd) == false)
+			{
+				rtn = opr;
+				break;
+			}
 		}
-	}
 
 	return rtn;
 }
@@ -76,6 +77,7 @@ function testOccurs(ini, arr)
 	for(c = 0; c < counter; c++)
 		alert("adata" + "[" + c + "] = " + adata[c]);
 
+	alert("Final");
 	return adata;
 }
 
